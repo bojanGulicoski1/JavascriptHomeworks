@@ -23,4 +23,5 @@ function validateNumber(number) {
   }
   let sum = sumOfFiveNumbers([10, 20, 50, 100, 300]);
   console.log(sum);
-  
+  let sum1 =sumOfFiveNumbers([10, 20,"hello" , 50, 100, 300]);
+  console.log(sum1)

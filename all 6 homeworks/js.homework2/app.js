@@ -21,6 +21,6 @@ function validateNumber(number) {
     return sum;
   
   }
-  let sum = sumOfFiveNumbers([10, 20, , 50, 100, 300]);
+  let sum = sumOfFiveNumbers([10, 20, 50, 100, 300]);
   console.log(sum);
   

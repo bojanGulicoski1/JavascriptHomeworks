@@ -2,9 +2,10 @@ const table = document.querySelector(".table");
 const btn = document.querySelector(".button");
 const nextBtn = document.querySelector(".buttonBot");
 const tableTwo = document.querySelector(".tableTwo");
-const prevBtn = document.querySelector("buttonsPrev");
+const prevBtn = document.querySelector(".buttonsPrev");
 
 nextBtn.style.display = "none";
+prevBtn.style.display = "none";
 
 btn.addEventListener("click", () => {
   fetch("https://swapi.dev/api/planets/?page=1")
@@ -20,9 +21,11 @@ btn.addEventListener("click", () => {
       }
     });
   nextBtn.style.display = "grid";
+  prevBtn.style.display = "none";
 });
 
 nextBtn.addEventListener("click", () => {
+  tableTwo.innerHTML = "";
   fetch("https://swapi.dev/api/planets/?page=2")
     .then((response) => response.json())
     .then((data) => {
@@ -38,4 +41,26 @@ nextBtn.addEventListener("click", () => {
   nextBtn.style.display = "none";
   btn.style.display = "none";
   table.style.display = "none";
+  prevBtn.style.display = "grid";
+  tableTwo.style.display = "grid";
+});
+
+prevBtn.addEventListener("click", () => {
+  table.innerHTML = "";
+  fetch("https://swapi.dev/api/planets/?page=1")
+    .then((response) => response.json())
+    .then((data) => {
+      for (let i = 0; i < 10; i++) {
+        const planet = data.results[i];
+        const row = table.insertRow();
+        row.insertCell().innerHTML = `Planet Name - ${planet.name}`;
+        row.insertCell().innerHTML = `Planet population - ${planet.population}`;
+        row.insertCell().innerHTML = `Planet climate - ${planet.climate}`;
+        row.insertCell().innerHTML = `Planet gravity - ${planet.gravity}`;
+      }
+    });
+  tableTwo.style.display = "none";
+  table.style.display = "grid";
+  nextBtn.style.display = "grid";
+  prevBtn.style.display = "none";
 });

@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  color: white;
 }
 body {
   background-image: url(fonstola.ru_67098.jpg);
@@ -33,17 +34,24 @@ header {
   color: white;
 }
 .container {
+  border-radius: 10px;
+  margin: 5px;
   height: 400px;
-  width: 250px;
+  width: 150px;
   position: relative;
-  left: 120px;
+  left: 0px;
+  right: 10px;
   top: 70px;
-  background-color: aqua;
-  background-image: url(R.png);
+  background-color: rgb(89, 89, 231);
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   font-size: small;
+}
+
+.contHolder {
+  display: flex;
+  justify-content: space-between;
 }

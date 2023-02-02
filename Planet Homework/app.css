@@ -1,0 +1,18 @@
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.table {
+  border: 1px solid black;
+  border-radius: 10px;
+}
+.tableTwo {
+  border: 1px solid black;
+  border-radius: 10px;
+}
+body {
+  display: grid;
+  justify-items: center;
+}

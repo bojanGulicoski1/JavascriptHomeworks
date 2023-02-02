@@ -1,8 +1,15 @@
 let homeBtn = document.querySelector(".homeBtn");
 let hourlyBtn = document.querySelector(".hourlyBtn");
 
+let container = document.querySelector(".container");
+let containerHolder = document.querySelector(".contHolder");
+container.style.display = "none";
+containerHolder.style.display = "none";
+
 homeBtn.addEventListener("click", () => {
   let container = document.querySelector(".container");
+  container.style.display = "flex";
+  containerHolder.style.display = "flex";
 
   container.innerHTML = "";
   let url =
